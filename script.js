@@ -22,3 +22,27 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('home').style.display = 'block';
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the custom cursor element
+    const cursor = document.createElement('div');
+    cursor.classList.add('cursor');
+    document.body.appendChild(cursor);
+
+    // Update cursor position
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+
+    // Update cursor position on click
+    document.addEventListener('mousedown', function() {
+        cursor.style.transform = 'scale(0.9)';
+    });
+
+    document.addEventListener('mouseup', function() {
+        cursor.style.transform = 'scale(1)';
+    });
+});
+
+
+

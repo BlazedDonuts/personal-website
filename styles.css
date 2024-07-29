@@ -1,8 +1,33 @@
 * {
+    cursor: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto mono", monospace;
+}
+
+/* Custom cursor */
+.cursor {
+    position: fixed;
+    width: 25px; /* Adjust size as needed */
+    height: 25px; /* Adjust size as needed */
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 255); /* Bright white with some transparency */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7); /* Enhanced glowing effect */
+    filter: blur(0.7px); /* Soft blur for a magical look */
+    pointer-events: none; /* Ensure cursor doesn’t interfere with other elements */
+    transition: background 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Smooth transition */
+    z-index: 9999; /* Ensure it appears above other elements */
+}
+
+/* Additional glowing effect on hover */
+body:hover .cursor {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Increased glow effect */
+}
+
+/* Ensure the pointer doesn't appear on hoverable elements */
+button, a {
+    cursor: none;
 }
 
 main {
@@ -34,13 +59,29 @@ main {
     align-items: center;
 }
 
+/*making dashboard float*/
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Adjust the value as needed */
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .dashboard {
     width: 75%;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: float 3s ease-in-out infinite;
+
 }
+
 
 .inner-glass {
     background: rgba(252, 250, 250, 0.1);
@@ -98,6 +139,16 @@ main {
     width: 100%;
     text-align: center;
     transition: background 0.3s, color 0.3s;
+    cursor: none;
+    transition: 0.4s ease;
+}
+
+.links .link:hover {
+        box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px white, 0 0 30px white, 0 0 40px white;
+        background-color: rgb(255, 255, 255); /* Bright neon white background */
+        color: black; /* Optional: Change text color for better readability */
+        transform: translateY(4px);
+        transition: 0.4s ease;
 }
 
 .links .link:nth-child(1) {
