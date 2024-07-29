@@ -183,3 +183,83 @@ main {
     margin: 10px;
 }
 
+/* Timeline Container */
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    padding: 10px;
+    margin-right: 50%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.timeline-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline Content */
+.timeline-content {
+    position: relative;
+    padding: 15px;
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #d7e9f0;
+}
+
+/* Timeline Connector */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 75%;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 45%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.timeline-item:nth-child(2) {
+    margin-left: auto; /* Align the second item to the right */
+    align-self: flex-end; /* Align text to the right for better appearance */
+}
