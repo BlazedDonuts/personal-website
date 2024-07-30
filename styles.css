@@ -9,20 +9,20 @@
 /* Custom cursor */
 .cursor {
     position: fixed;
-    width: 25px; /* Adjust size as needed */
-    height: 25px; /* Adjust size as needed */
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 255); /* Bright white with some transparency */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7); /* Enhanced glowing effect */
-    filter: blur(0.7px); /* Soft blur for a magical look */
-    pointer-events: none; /* Ensure cursor doesn’t interfere with other elements */
-    transition: background 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Smooth transition */
-    z-index: 9999; /* Ensure it appears above other elements */
+    background: rgba(255, 255, 255, 255);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7);
+    filter: blur(0.7px);
+    pointer-events: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    z-index: 9999;
 }
 
 /* Additional glowing effect on hover */
 body:hover .cursor {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Increased glow effect */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
 }
 
 /* Ensure the pointer doesn't appear on hoverable elements */
@@ -65,7 +65,7 @@ main {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px); /* Adjust the value as needed */
+        transform: translateY(-10px);
     }
     100% {
         transform: translateY(0);
@@ -73,13 +73,16 @@ main {
 }
 
 .dashboard {
-    width: 75%;
+    width: 85%;
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 20px;
     animation: float 3s ease-in-out infinite;
+    justify-content: center;
+}
 
+.inner-inner-glass {
+    display: flex;
 }
 
 
@@ -89,15 +92,19 @@ main {
     border: 1px solid #ffffff;
     backdrop-filter: blur(0.1px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100%;
     padding: 20px;
     overflow: auto;
+    display: flex; /* Ensure flexbox layout */
+    gap: 20px; /* Space between columns */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .user h3 {
     font-family: "Roboto mono", monospace;
-    font-size: 2vw; /* Use viewport width units for responsiveness */
+    font-size: 2vw;
     margin: 1px 0 5px 0;
     color: white;
     margin-left: 61px;
@@ -105,12 +112,11 @@ main {
 
 .user p {
     font-family: "Roboto mono", monospace;
-    font-size: 1.1vw; /* Use viewport width units for responsiveness */
+    font-size: 1.1vw;
     margin: 0 0 10px 0;
     color: rgb(217, 233, 240);
     margin-left: 50px;
 }
-
 
 .user img {
     width: 125px;
@@ -133,8 +139,9 @@ main {
     border-radius: 1rem;
     cursor: pointer;
     color: white;
-    font-size: 1.5vw; /* Use viewport width units for responsiveness */
+    font-size: 1.5vw;
     margin: 10px 0;
+    margin-left: 10%;
     padding: 10px;
     width: 100%;
     text-align: center;
@@ -144,122 +151,86 @@ main {
 }
 
 .links .link:hover {
-        box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px white, 0 0 30px white, 0 0 40px white;
-        background-color: rgb(255, 255, 255); /* Bright neon white background */
-        color: black; /* Optional: Change text color for better readability */
-        transform: translateY(4px);
-        transition: 0.4s ease;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px white, 0 0 30px white, 0 0 40px white;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transform: translateY(4px);
 }
 
-.links .link:nth-child(1) {
-    margin-top: 20px; /* Adjust the value to your preference */
+.link p {
+    margin-left: 8px;
 }
 
-.links .link:nth-child(2) {
-    margin-top: 30px; /* Adjust the value to your preference */
-    margin-bottom: 30px; /* Adjust the value to your preference */
-}
-
-.links .link:nth-child(3) {
-    margin-bottom: 30px; /* Adjust the value to your preference */
-}
-
-.link h2 {
-    margin: 0;
-    font-size: 1.5vw; /* Use viewport width units for responsiveness */
-}
-
-.link:hover {
-    background: rgba(255, 255, 255, 0.4);
-    color: #000;
-}
-
-
-.socials img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 10px;
-}
-
-/* Timeline Container */
-.timeline {
-    position: relative;
+.socials {
     width: 100%;
-    max-width: 800px; /* Adjust max-width as needed */
-    margin: 0 auto;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    margin-left: 10%;
+    font-size: 2.5rem;
+    color: rgb(195, 221, 241);
 }
 
-/* Timeline Items */
+.timeline {
+    width: 65%;
+}
+
+.event {
+    flex: 1; /* Take up equal space */
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin-top: 3.5%;
+    margin-left: 2%;
+    font-size: 2rem;
+}
+
 .timeline-item {
-    position: relative;
-    margin: 20px 0;
-    padding: 10px;
-    margin-right: 50%;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, box-shadow 0.3s;
+    margin-bottom: 5%;
 }
 
-.timeline-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Timeline Content */
 .timeline-content {
-    position: relative;
-    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
 }
 
-.timeline-content h3 {
-    margin: 0 0 10px;
-    color: #ffffff;
-    font-size: 1.2rem;
+.timeline-item h2 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(35, 36, 41);
+    font-weight: bold;
 }
 
-.timeline-content p {
-    margin: 0;
-    color: #d7e9f0;
+.tech-stack h2 {
+    color: rgb(35, 36, 41);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 15%;
+    padding-left: 5%;
+    font-weight: bold;
 }
 
-/* Timeline Connector */
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 10%;
-    height: 75%;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateX(-50%);
-    z-index: 0;
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.timeline-item {
-    position: relative;
-    padding-left: 20px;
-}
-
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -15px;
-    top: 45%;
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-    z-index: 1;
-}
-
-.timeline-item:nth-child(2) {
-    margin-left: auto; /* Align the second item to the right */
-    align-self: flex-end; /* Align text to the right for better appearance */
+.tech-icons i {
+    font-size: 3.2rem;
+    color: white;
 }
