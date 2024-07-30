@@ -9,20 +9,20 @@
 /* Custom cursor */
 .cursor {
     position: fixed;
-    width: 25px; /* Adjust size as needed */
-    height: 25px; /* Adjust size as needed */
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 255); /* Bright white with some transparency */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7); /* Enhanced glowing effect */
-    filter: blur(0.7px); /* Soft blur for a magical look */
-    pointer-events: none; /* Ensure cursor doesn’t interfere with other elements */
-    transition: background 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Smooth transition */
-    z-index: 9999; /* Ensure it appears above other elements */
+    background: rgba(255, 255, 255, 255);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(255, 255, 255, 0.7);
+    filter: blur(0.7px);
+    pointer-events: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    z-index: 9999;
 }
 
 /* Additional glowing effect on hover */
 body:hover .cursor {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 1); /* Increased glow effect */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
 }
 
 /* Ensure the pointer doesn't appear on hoverable elements */
@@ -47,7 +47,7 @@ main {
     border-radius: 1rem;
     border: 3px solid #fdfdfd;
     z-index: 2;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -65,7 +65,7 @@ main {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px); /* Adjust the value as needed */
+        transform: translateY(-10px);
     }
     100% {
         transform: translateY(0);
@@ -73,13 +73,16 @@ main {
 }
 
 .dashboard {
-    width: 75%;
+    width: 85%;
     padding: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    gap: 20px;
     animation: float 3s ease-in-out infinite;
+    justify-content: center;
+}
 
+.inner-inner-glass {
+    display: flex;
 }
 
 
@@ -87,17 +90,21 @@ main {
     background: rgba(252, 250, 250, 0.1);
     border-radius: 1rem;
     border: 1px solid #ffffff;
-    backdrop-filter: blur(0.1px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    height: 100%;
     padding: 20px;
     overflow: auto;
+    display: flex; /* Ensure flexbox layout */
+    gap: 20px; /* Space between columns */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .user h3 {
     font-family: "Roboto mono", monospace;
-    font-size: 2vw; /* Use viewport width units for responsiveness */
+    font-size: 2vw;
     margin: 1px 0 5px 0;
     color: white;
     margin-left: 61px;
@@ -105,12 +112,11 @@ main {
 
 .user p {
     font-family: "Roboto mono", monospace;
-    font-size: 1.1vw; /* Use viewport width units for responsiveness */
+    font-size: 1.1vw;
     margin: 0 0 10px 0;
     color: rgb(217, 233, 240);
     margin-left: 50px;
 }
-
 
 .user img {
     width: 125px;
@@ -133,8 +139,9 @@ main {
     border-radius: 1rem;
     cursor: pointer;
     color: white;
-    font-size: 1.5vw; /* Use viewport width units for responsiveness */
+    font-size: 1.5vw;
     margin: 10px 0;
+    margin-left: 10%;
     padding: 10px;
     width: 100%;
     text-align: center;
@@ -144,42 +151,123 @@ main {
 }
 
 .links .link:hover {
-        box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px white, 0 0 30px white, 0 0 40px white;
-        background-color: rgb(255, 255, 255); /* Bright neon white background */
-        color: black; /* Optional: Change text color for better readability */
-        transform: translateY(4px);
-        transition: 0.4s ease;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px white, 0 0 30px white, 0 0 40px white;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    transform: translateY(4px);
 }
 
-.links .link:nth-child(1) {
-    margin-top: 20px; /* Adjust the value to your preference */
+.link p {
+    margin-left: 8px;
 }
 
-.links .link:nth-child(2) {
-    margin-top: 30px; /* Adjust the value to your preference */
-    margin-bottom: 30px; /* Adjust the value to your preference */
+.socials {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    margin-left: 10%;
+    font-size: 2.5rem;
 }
 
-.links .link:nth-child(3) {
-    margin-bottom: 30px; /* Adjust the value to your preference */
+.socials i {
+    color: #ffffff; /* Change this to your desired color */
+    font-size: 2rem; /* Adjust the size if needed */
+    transition: color 0.3s ease; /* Optional: Smooth transition on color change */
 }
 
-.link h2 {
-    margin: 0;
-    font-size: 1.5vw; /* Use viewport width units for responsiveness */
+.socials i:hover {
+    color: #0f8676; /* Change to the color you want on hover */
 }
 
-.link:hover {
-    background: rgba(255, 255, 255, 0.4);
-    color: #000;
+a {
+    text-decoration: none; /* Remove underline */
+    outline: none; /* Remove outline */
+}
+
+/* Optional: Ensure icons maintain their color and appearance on hover and active states */
+a:hover, a:focus, a:active {
+    color: inherit; /* Maintain the icon's original color */
+    background: none; /* Remove background */
+    box-shadow: none; /* Remove shadow */
 }
 
 
-.socials img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 10px;
+.timeline {
+    width: 65%;
 }
 
+.event {
+    flex: 1; /* Take up equal space */
+    display: flex;
+    flex-direction: column;
+}
+
+.tech-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin-top: 2%;
+    margin-left: 2%;
+    font-size: 2rem;
+    padding: 2px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    background: #bce4f741;
+    backdrop-filter: blur(80%);
+    transition: transform 0.3s ease;
+}
+
+.tech-stack:hover {
+    transform: translateY(10px); /* Moves the element 10px down on hover */
+}
+
+.timeline-item {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    background: #1ba7c01a;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(10px); /* Moves the element 10px down on hover */
+}
+
+.timeline-content {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: rgb(15, 34, 59);
+    font-weight: 500;
+}
+
+
+.tech-stack h2 {
+    color: rgb(15, 34, 59);
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    padding-left: 5%;
+    font-weight: 800;
+}
+
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tech-icons i {
+    font-size: 3.2rem;
+    color: white;
+}
