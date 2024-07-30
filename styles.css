@@ -47,7 +47,7 @@ main {
     border-radius: 1rem;
     border: 3px solid #fdfdfd;
     z-index: 2;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -90,7 +90,7 @@ main {
     background: rgba(252, 250, 250, 0.1);
     border-radius: 1rem;
     border: 1px solid #ffffff;
-    backdrop-filter: blur(0.1px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     overflow: auto;
@@ -169,8 +169,30 @@ main {
     margin-top: 40px;
     margin-left: 10%;
     font-size: 2.5rem;
-    color: rgb(195, 221, 241);
 }
+
+.socials i {
+    color: #ffffff; /* Change this to your desired color */
+    font-size: 2rem; /* Adjust the size if needed */
+    transition: color 0.3s ease; /* Optional: Smooth transition on color change */
+}
+
+.socials i:hover {
+    color: #0f8676; /* Change to the color you want on hover */
+}
+
+a {
+    text-decoration: none; /* Remove underline */
+    outline: none; /* Remove outline */
+}
+
+/* Optional: Ensure icons maintain their color and appearance on hover and active states */
+a:hover, a:focus, a:active {
+    color: inherit; /* Maintain the icon's original color */
+    background: none; /* Remove background */
+    box-shadow: none; /* Remove shadow */
+}
+
 
 .timeline {
     width: 65%;
@@ -187,39 +209,54 @@ main {
     flex-direction: column;
     align-items: center;
     width: 30%;
-    margin-top: 3.5%;
+    margin-top: 2%;
     margin-left: 2%;
     font-size: 2rem;
+    padding: 2px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    background: #bce4f741;
+    backdrop-filter: blur(80%);
+    transition: transform 0.3s ease;
+}
+
+.tech-stack:hover {
+    transform: translateY(10px); /* Moves the element 10px down on hover */
 }
 
 .timeline-item {
     margin-bottom: 5%;
+    margin-top: 5%;
+    background: #1ba7c01a;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(10px); /* Moves the element 10px down on hover */
 }
 
 .timeline-content {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    border: 1px solid white;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    color: white;
+    color: rgb(15, 34, 59);
+    font-weight: 500;
 }
 
-.timeline-item h2 {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    text-align: center;
-    font-size: 2.5rem;
-    color: rgb(35, 36, 41);
-    font-weight: bold;
-}
 
 .tech-stack h2 {
-    color: rgb(35, 36, 41);
+    color: rgb(15, 34, 59);
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 15%;
-    padding-left: 5%;
+    font-size: 1.7rem;
     font-weight: bold;
+    margin-top: 10%;
+    margin-bottom: 8%;
+    padding-left: 5%;
+    font-weight: 800;
 }
 
 .tech-icons {
