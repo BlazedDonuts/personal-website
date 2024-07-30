@@ -271,3 +271,154 @@ a:hover, a:focus, a:active {
     font-size: 3.2rem;
     color: white;
 }
+
+
+
+
+/* Timeline container */
+.horizontal-timeline {
+    position: relative;
+    padding-top: 40px; /* Space for the horizontal line */
+}
+  
+  /* Horizontal line */
+  .horizontal-timeline .items {
+    border-top: 3px solid #e9ecef; /* Horizontal line */
+    padding-top: 50px; /* Space between line and event description */
+  }
+  
+  /* Timeline items */
+  .horizontal-timeline .items .items-list {
+    display: inline-block;
+    width: 25%;
+    padding-top: 20px; /* Space between date and description */
+    margin: 0 15px; /* Space between boxes */
+    position: relative; /* Position relative for alignment */
+    transition: transform 0.3s ease;
+  }
+
+  .horizontal-timeline .items .items-list:hover {
+    transform: translateY(10px); /* Move the box down on hover */
+  }
+  
+  /* Vertical line between items */
+  .horizontal-timeline .items .items-list:before {
+    content: "";
+    position: absolute;
+    height: 10%; /* Full height of the timeline container */
+    border-right: 2px dashed #051d36;
+    top: 0; /* Position at the top of the container */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  /* Event date box */
+  .horizontal-timeline .items .items-list .event-date {
+    position: absolute;
+    top: -15%; /* Position above the horizontal line */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 75px;
+    background: rgba(165, 229, 238, 0.8); /* Glassmorphism effect */
+    border-radius: 10px; /* Rounded corners */
+    padding: 8px; /* Adjust padding if needed */
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* Event description box */
+  .horizontal-timeline .items .items-list h5,
+  .horizontal-timeline .items .items-list p {
+    margin: 30px;
+    padding: 10px;
+    width: 100%;
+    background: rgba(140, 166, 187, 0.8); /* Glassmorphism effect */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+  }
+
+
+  /* General styles for the carousel container */
+.carousel-container {
+    position: relative;
+    width: 90%; /* Adjust width as needed */
+    height: 500px; /* Adjust height as needed */
+    margin: auto;
+    margin-top: 5%;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid white;
+}
+
+/* Carousel styles */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+    
+}
+
+/* Slide styles */
+.carousel-slide {
+    min-width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    color: rgb(15, 34, 59);
+}
+
+/* Arrow button styles */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 2;
+    color: white; /* Arrow color */
+    border: 1px solid white;
+}
+
+/* Positioning for arrow buttons */
+.arrow-left {
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    padding: 0.5%;
+}
+
+.arrow-right {
+    right: 10px;
+    width: 60px;
+    height: 60px;
+    padding: 0.5%;
+}
+
+.projects-img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 2%;
+}
+
+.projects-img img {
+    max-width: 50%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image covers container */
+    border-radius: 2%;
+}
